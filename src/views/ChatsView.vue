@@ -16,13 +16,21 @@
 <script>
     export default {
         data() {
-            return {
-                chats: [
-                    { id: 1, name: 'Ximena' }, 
-                    { id: 2, name: 'Daniel' },
-                    { id: 3, name: 'Miguel' }, 
-                ]
-            }
+            return {}
+        },
+        created() {
+            this.$watch(
+                () => this.$route.params,
+                (val) => {
+                    console.log('update params', val)
+                    this.chats = [
+                        { id: 1, name: 'Ximena' }, 
+                        { id: 2, name: 'Daniel' },
+                        { id: 3, name: 'Miguel' }, 
+                    ]
+                },
+                { immediate: true }
+            )
         }
     }
 </script>
