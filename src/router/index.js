@@ -41,7 +41,7 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   console.log(to, from)
 
-  if(to.path === '/') return '/about'
+  if(to.path === '/') return { name: '/about'}
   return true
 })
 
