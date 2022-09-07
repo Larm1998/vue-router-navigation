@@ -1,15 +1,12 @@
-<script>
-export default {
-  data() {
-    return {
-      username: '',
-    }
-  },
-  methods: {
-    begin() {
-      this.$router.push('/chats')
-    }
-  }
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const username = ref()
+
+const router = useRouter()
+
+function initialize() {
+  router.push({ name: 'about' })
 }
 </script>
 
